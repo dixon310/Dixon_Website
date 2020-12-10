@@ -5,7 +5,7 @@ class ToDoList(models.Model):
     name = models.CharField(max_Length=200)
 
     def __str__(self):
-        return self.NAME
+        return self.name
 
 class Item(models.Model):
     ToDoList = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
@@ -13,4 +13,4 @@ class Item(models.Model):
     complete = models.BooleanField()
 
     def __str__(self):
-    return self.text
+        return self.text
