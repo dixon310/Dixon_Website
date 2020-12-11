@@ -3,8 +3,10 @@ from django.http import HttpResponse
 from .models import ToDoList, Item
 # Create your views here.
 
-def index(response, id):
-    return HttpResponse("<h1>Welcome to Dixon page 1</h1>" % id)
+def index(response, name):
+    ls = ToDoList.objects.get(name=name)
+    items = ls.item_set.get(id=1)
+    return HttpResponse("<h1>%s</h1><br></br><p>%s</p>" %(ls.name, str(item.text)))
 
 def V1(response):
     return HttpResponse("<h1>view 1</h1>")
