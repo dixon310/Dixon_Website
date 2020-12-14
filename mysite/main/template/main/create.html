@@ -5,8 +5,10 @@ Create New List
 {% endblock %}
 
 {% block content %}
-Create Page
+<h1>Create Page</h1>
 <form action="/create/" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
   <button type="submit" name="save">Create New</button>
 </form>
 {% endblock %}
