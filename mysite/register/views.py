@@ -9,6 +9,6 @@ def register(response):
         form = UserCreationForm(response.POST)
         if form.is_valid():
             form.save()
-        else:
+    else:
             form = UserCreationForm()
     return render(response, "register/register.html", {"form":form})
