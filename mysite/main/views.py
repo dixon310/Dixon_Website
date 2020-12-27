@@ -37,8 +37,10 @@ def create(response):
         form = CreateNewList(response.POST)
 
         if  form.is_valid():
-            n = form.cleaned_date["name"]
-            respones.user.ToDoList_set.create(name=n)
+            n = form.cleaned_data["name"]
+            t = ToDoList(name=n)
+            t.save()
+            response.user.todolist.add(t)
 
 
         return HttpResponseRedirect("/%i" %t.id)
