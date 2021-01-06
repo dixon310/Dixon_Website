@@ -42,7 +42,7 @@ def create(response):
             t.save()
             response.user.todolist.add(t)
 
-
+ 
         return HttpResponseRedirect("/%i" %t.id)
 
     else:
