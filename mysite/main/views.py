@@ -42,7 +42,7 @@ def create(response):
             t.save()
             response.user.todolist.add(t)
 
- 
+
         return HttpResponseRedirect("/%i" %t.id)
 
     else:
@@ -51,3 +51,6 @@ def create(response):
 
 def view(response):
     return render(response, "main/view.html", {})
+
+def MyProjects(response):
+    return render(response, "main/MyProjects.html", {})
