@@ -1,66 +1,123 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- CSS -->
     <style type="text/css">
-      .sidenav{
-        height:100%;
-        width:160px;
-        position:fixed;
-        z-index:1;
-        top:0;
-        left:0;
-        background-color:#111;
-        overflow: :hidden;
-        padding-bottom: 20px;
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+    :root{
+      --primary-color: rgba(0,0,0,0.8);
+    }
+      body{
+        background-color: rgba(0,0,0,0.3);
+    }
+      .navbar{
+        width: 100%;
+        margin: auto;
+        position: relative;
+        text-align: left;
+        height: 60px;
+        background: bisque;
+        margin-top: 0%;
+        }
+        .logo{
+          text-decoration: none;
+          font-weight: bold;
+          color: gray;
+          font-size: 1.1em;
+          font-family: 'Oxygen';
+          padding: 10px;
+          letter-spacing: .3em;
+        }
+
+          span{
+            color: var(--primary-color);
+          }
+
+        nav{
+          display: none;
+        }
+        .container{
+          margin-left: 0px
+          display: flex;
+          place-content: space-between;
+        }
+
+        .mobile-menu{
+
+        }
+
+      .navbar ul{
+        list-style: none;
+        padding-top: 16px;
+        padding-left: 0px;
+
       }
 
-      .sidenav a {
-        padding:6px 8px 6px 16px;
+      .navbar ul li{
+        display: inline-block;
+      }
+
+      .navbar ul li a{
         text-decoration: none;
-        font-size:25px;
-        color: #818181;
-        display: block;
+        text-transform: uppercase;
+        padding: 19px;
+        color:#262626;
+        font-weight: bold;
+        font-family: 'Oxygen';
       }
 
-      .sidenav a:hover {
-        color:#f1f1f1;
-        }
+      .navbar ul li a:hover{
+        background: chocolate;
+        color: #fff;
+        transform: .6s;
+      }
 
-        .main{
-          margin-left: 160px;
-          padding: 0px 10px;
-        }
+      .shadow{
+        position: relative;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset;
+      }
+
+      .shadow:before,.shadow:after{
+        content '';
+        position: absolute;
+        z-index: -1;
+        box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        top: 50px;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        border-radius: 100px / 10px;
+      }
+
+      .hero{
+        text-align: center;
+
+      }
     </style>
+
 <!-- bootstrap -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-    <title>{%  block title %}Dixon's site{% endblock %}</title>
+    <title>Dixon's site</title>
   </head>
   <body>
-    <div class="navbar navbar-expand-lg navbar-light bg-light">
-      <a href="/" class="navbar-brand">Home</a>
-      <a href="/create">Create</a>
-      <a href="/view">View</a>
-      <a href="/MyProjects">My Projects</a>
+    <div class="navbar">
+      <div class="container">
+        <ul>
+          <li><a href="/" class="logo">Dixon<span>Chiu</span></a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/create">Create</a></li>
+          <li><a href="/view">View</a></li>
+          <li><a href="/MyProjects">My Projects</a></li>
+        </ul>
+      </div>
     </div>
 
     <div id="content", name="content", class="main">
-      <div class="row justify-content-center">
-        <div class="col-8">
-          <h1 class="mt-2">My Site</h1>
-          <h1 class="mt-0 mb-4"></h1>
-            {%  block content %}
-            {%  endblock %}
-        </div>
+
+        {%  block content %}
+        {%  endblock %}
     </div>
   </div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
