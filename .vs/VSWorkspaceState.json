@@ -3,8 +3,14 @@
     "",
     "\\mysite",
     "\\mysite\\main",
-    "\\mysite\\mysite"
+    "\\mysite\\main\\template",
+    "\\mysite\\main\\template\\main",
+    "\\mysite\\mysite",
+    "\\mysite\\register",
+    "\\mysite\\register\\migrations",
+    "\\mysite\\register\\templates",
+    "\\mysite\\register\\templates\\register"
   ],
-  "SelectedNode": "\\mysite\\mysite\\urls.py",
+  "SelectedNode": "\\mysite\\main\\template\\main\\base.html",
   "PreviewInSolutionExplorer": false
 }
